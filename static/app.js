@@ -94,7 +94,9 @@ function judge() {
             }
 
             // サーバーで判定を行い、結果を表示する.
-            let url = '/api/judge?data=' + data.join(',');
+            //let url = "/api/judge?data=" + data.join(',');
+            let url = "http://127.0.0.1:5002/api/judge?data=" + data.join(',');
+            console.log(url);
             api(url).then(result => {
                 document.getElementById('result').innerHTML = result;
             });
