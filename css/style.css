@@ -1,0 +1,14 @@
+.background {
+    /* display: flex; */
+    position: relative;
+    z-index: 1;
+    /* background-color: rgba(15, 35, 80, 0.74); */
+}
+
+.background a {
+    position: absolute;
+    z-index: 10;
+    color: aliceblue;
+    top: 50px;
+    left: 50px;
+}

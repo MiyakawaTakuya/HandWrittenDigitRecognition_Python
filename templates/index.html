@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>JudgeNumberWrited</title>
@@ -8,19 +9,34 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <style>
+        h2 {
+            color: #AABBEE;
+            letter-spacing: 0.5em;
+        }
+
+        p {
+            color: #AABBEE;
+            font-size: 14pt;
+            padding: 5pt;
+        }
+
         #canvas {
             display: block;
             width: 300px;
             height: 300px;
             border: 1px solid #ccc;
+            background-color: #E2E1D7;
         }
+
         .flex-box {
             display: flex;
             justify-content: center;
         }
+
         #judgeButton {
             margin: 10px;
         }
+
         #result {
             width: 300px;
             height: 300px;
@@ -28,29 +44,69 @@
             font-size: 200px;
             text-align: center;
             line-height: 300px;
+            background-color: #E2E1D7;
+            color: #EEFFFF;
         }
+
         .arrow {
             line-height: 300px;
             margin: 0 20px;
             font-size: 20px;
+            color: #AABBEE;
         }
+
+        .background {
+            /* display: flex; */
+            /* position: absolute; */
+            position: relative;
+            z-index: 1;
+            background-color: #E2E1D7;
+            /* background-color: rgba(15, 35, 80, 0.74); */
+        }
+
+        .background_front {
+            /* position: absolute; */
+            position: relative;
+            z-index: 10;
+            letter-spacing: 1em;
+            /* color: aliceblue; */
+            top: 50px;
+            left: 50px;
+        }
+
+
+        /* #bg-canvas {
+            background-image: -moz-element(background);
+            background: -webkit-canvas(background);
+            height: 400px;
+        } */
     </style>
 </head>
-<body>
-    <h1 style="text-align: center; margin-bottom: 0;">手書き文字を判定しよう</h1>
-    <p style="text-align: center;">(Flaskと機械学習のサンプル)</p>
-    <div class="flex-box">
-        <div>
-            <p style="text-align:center;margin:0;">▼フリーハンドで書いてみる(一筆書き)▼</p>
-            <canvas id="canvas" width="300" height="300" class="mdl-card mdl-shadow--2dp"></canvas>
-            <button id="delButton" class="mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect" style="margin-top:10px;">消す</button>
-        </div>
-        <div class="arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
-        <div>
-            <p style="text-align:center;margin:0;">▼判定結果です！▼</p>
-            <div id="result" class="mdl-card mdl-shadow--2dp"></div>
+
+<body class="background">
+    <!-- <canvas id="q" class="background"> -->
+    <div class="background">
+        <h2 style="text-align: center; margin-bottom: 0;">Judge Your Number</h2>
+        <p style="text-align: center;"></p>
+        <div class="flex-box">
+            <div>
+                <p style="text-align:center;margin:0;">Please number written in one stroke</p>
+                <canvas id="canvas" width="300" height="300" class="mdl-card mdl-shadow--2dp"></canvas>
+                <button id="delButton" class="mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect"
+                    style="margin-top:10px;">Erase</button>
+            </div>
+            <div class="arrow"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+            <div>
+                <p style="text-align:center;margin:0;">Result</p>
+                <div id="result" class="mdl-card mdl-shadow--2dp"></div>
+            </div>
         </div>
     </div>
+    <!-- </canvas> -->
     <script type="text/javascript" src="../static/app.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/back.js"></script>
 </body>
+
 </html>

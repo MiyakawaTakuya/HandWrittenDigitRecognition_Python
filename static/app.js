@@ -42,8 +42,9 @@ function api(url) {
 function draw() {
 
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.lineWidth = 40;
+    context.lineWidth = 10;
     context.lineCap = 'round';
+    context.strokeStyle = "#EEFFFF";
 
     for (let i = 0; i < points.length; i++) {
         let p1 = points[i];
@@ -150,6 +151,22 @@ function handleDelButtonClick() {
     draw();
 }
 
+//canvasを背景にしたい
+//function getBgCanvas(id, width, height){
+//    var ctx = false;
+//    if(document.getCSSCanvasContext){ // webkit用の指定
+//        ctx = document.getCSSCanvasContext('2d', id, width, height);
+//    }else if(document.mozSetImageElement){ // Firefox用の指定
+//        var canvas = document.createElement('canvas');
+//       canvas.setAttribute("width", width);
+//        canvas.setAttribute("height", height);//      ctx = canvas.getContext('2d');
+//        document.mozSetImageElement(id, canvas);
+//    }
+//    return ctx;
+//}
+
+//var ctx = getBgCanvas('background', 100, 400);
+
 // アプリケーションを開始します.
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -163,3 +180,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('delButton').onclick = handleDelButtonClick;
 });
+
